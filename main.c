@@ -45,7 +45,7 @@ void *calculate_sqrt_sum(void *arg)
         // Method 3: Use local variables and synchronize using a mutex
         for (long long int x = start; x <= end; x++)
         {
-            global_sqrt_sum += sqrt(x);
+            local_sqrt_sum += sqrt(x);
         }
         pthread_mutex_lock(&mutex);
         global_sqrt_sum += local_sqrt_sum;
